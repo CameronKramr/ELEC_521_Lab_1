@@ -13,15 +13,17 @@ def write_sweep_params(filename, param_name, sweep_params):
 		file_obj.write(f" {key}")
 	file_obj.write('\n')
 	
-	for i in range(len(sweep_params[0])):
-		for key in keys
-			file_obj.write(f" {sweep_params[key][i]}")
+	print(keys)
+	for param_iter in range(len(sweep_params[keys[0]])):
+		for key in keys:
+			file_obj.write(f" {sweep_params[key][param_iter]}")
 		file_obj.write('\n')
 	file_obj.write(".ENDDATA")
 	file_obj.close()
+	
 if __name__ == "__main__":
 	print("Hello world")
-	test_params = {"len1", "len2", "len3"}
+	test_params = {}
 	test_params["len1"] = [i for i in range(10)]
 	test_params["len2"] = [i*i for i in range(10)]
 	test_params["len3"] = [i*2 for i in range(10)]
