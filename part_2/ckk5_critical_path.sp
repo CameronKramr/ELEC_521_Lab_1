@@ -49,6 +49,9 @@ XIn_2 In_2 output vdd vss inv size ='size_stage_3'
 *Put these in an external file to reduce clutter in this one.
 .INCLUDE ./output_load.sp
 
+*Output loading capacitor
+Coutput output vss C_output
+
 *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*
 * Initial Conditions
 
