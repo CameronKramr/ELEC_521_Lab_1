@@ -1,5 +1,6 @@
 import sys
 
+
 #function to find the headers and put the lines into a list
 def collect_header(file_target, MAX_SEARCH = 100, last_header = 'alter#'):
 	#get first line
