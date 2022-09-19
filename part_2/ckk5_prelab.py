@@ -1,5 +1,6 @@
 import sys
 
+
 #function to find the headers and put the lines into a list
 def collect_header(file_target, MAX_SEARCH = 100, last_header = 'alter#'):
 	#get first line
@@ -73,6 +74,8 @@ def parse_data(File_Target, Col_Parts, Header_Rows):
 			
 			#index the output dictionary at the current key and
 			#append the current line_item to that list
+			if('failed' in line_item):
+				line_item = 'Nan'
 			output[Col_Parts[line_iter]].append(line_item)
 	return output
 
