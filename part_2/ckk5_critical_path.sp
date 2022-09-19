@@ -76,7 +76,8 @@ v2 in 0 PWL 0 0 200p 0 220p 1.8 1.22n 1.8 1.24n 0
 .PROBE TRAN
 +	V(output)
 +	V(in)
-
 .OP
 .measure TRAN delay TRIG V(in) VAL=0.9 RISE=1 TARG V(output) VAL=0.9 FALL=1
+*.measure TRAN pwr INTEG I(vdd)
+.PRINT TRAN Vin=V(in) Vout=V(output)
 

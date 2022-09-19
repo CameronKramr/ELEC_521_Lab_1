@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "N-2017.12 linux64"
 * "format" "HSP"
-* "rundate" "21:08:09 09/18/2022 "
+* "rundate" "23:32:30 09/18/2022 "
 * "netlist" "ckk5_critical_path.sp "
 * "runtitle" "*pdk library"
 * time =  0.000000e+00    
@@ -12,7 +12,7 @@
 .nodeset
 + in = 0.000000e+00    
 + in_0 = 1.800000e+00    
-+ in_1 = 1.666229e-07    
++ in_1 = 1.660964e-07    
 + in_2 = 1.800000e+00    
 + load_0 = 1.800000e+00    
 + load_1 = 1.800000e+00    
@@ -46,7 +46,7 @@
 + load_7 = 1.800000e+00    
 + load_8 = 1.800000e+00    
 + load_9 = 1.800000e+00    
-+ output = 1.433449e-07    
++ output = 1.432236e-07    
 + vdd = 1.800000e+00    
 + vss = 0.000000e+00    
 ***   END: Saved Operating Point ***                     

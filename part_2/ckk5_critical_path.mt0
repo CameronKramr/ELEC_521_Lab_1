@@ -1,8 +1,6 @@
-$DATA1 SOURCE='HSPICE' VERSION='N-2017.12 linux64' PARAM_COUNT=6
+$DATA1 SOURCE='HSPICE' VERSION='N-2017.12 linux64' PARAM_COUNT=4
 .TITLE '*pdk library'
  index            size_0           size_1           size_2          
-                  size_3           size_4           delay           
-                  temper           alter#          
- 1                 1.000017e+00     1.762535e+00     1.942242e+00   
-                   2.235833e+00     3.527760e+00     1.300651e-09   
-                   2.500000e+01    1               
+                  delay            temper           alter#          
+ 1                 1.810648e+00     5.460792e+00     1.433056e+01   
+                   1.183846e-09     2.500000e+01    1               

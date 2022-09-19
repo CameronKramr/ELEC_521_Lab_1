@@ -54,7 +54,7 @@ def write_amplifiers(output, nodes):
 
 if __name__ == "__main__":
 	
-	initial_value = [2, 2, 2, 2, 2]
+	initial_value = [1.8, 5.5, 13.6]
 	stage_names = ["size_" + str(i) for i in range(len(initial_value))]
 	bounds = [(1,64) for i in initial_value]
 
