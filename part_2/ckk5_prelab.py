@@ -73,6 +73,8 @@ def parse_data(File_Target, Col_Parts, Header_Rows):
 			
 			#index the output dictionary at the current key and
 			#append the current line_item to that list
+			if('failed' in line_item):
+				line_item = 'Nan'
 			output[Col_Parts[line_iter]].append(line_item)
 	return output
 
