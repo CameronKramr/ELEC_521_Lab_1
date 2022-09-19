@@ -1,3 +1,3 @@
-.DATA sweep_params size_stage_1 size_stage_2 size_stage_3
- 2.0 4.0 8.000000014901161
+.DATA sweep_params size_0 size_1 size_2 size_3 size_4
+ 0.9999816216422814 1.762530973616836 1.942225804045149 2.235862529340964 3.5277824565442546
 .ENDDATA

@@ -45,20 +45,30 @@ def Optimize_Function(x, *args):
 	print(f"output: {data[target_name][0]}")
 	return float(data[target_name][0])
 
+def write_amplifiers(output, nodes):
+	file_handle = open(output, 'w')
+	for i in range(nodes - 1):
+		line = f"XIn_{i} In_{i} In_{i+1} vdd vss inv size =\'size_{i}\'\n"
+		file_handle.write(line)
+	file_handle.write(f"XIn_{nodes-1} In_{nodes -1} output vdd vss inv size =\'size_{nodes-1}\'\n")
+
 if __name__ == "__main__":
+	
+	initial_value = [2, 2, 2, 2, 2]
+	stage_names = ["size_" + str(i) for i in range(len(initial_value))]
+	bounds = [(1,64) for i in initial_value]
+
+	write_amplifiers("amplifier.sp", len(initial_value))
+	
 	arguments = ("ckk5_critical_path.sp",
 					"sweep_params.sp",
 					"sweep_params",
-					["size_stage_1", "size_stage_2", "size_stage_3"],
+					stage_names,
 					"delay",
 					"ckk5_critical_path.mt0")
-	bounds = [(1,64),(1,64),(1,64)]
-	initial_value = [2, 4, 8]
-	step_size = [0.1, 0.1, 0.1]
-	gtol = 1e-12
 	
 	print(minimize(Optimize_Function, initial_value,
-		method='Nedler-Mead', 
+		method='Nelder-Mead', 
 		args = arguments, 
 		bounds = bounds,
 		options={'disp':True}))

@@ -22,10 +22,6 @@
 *Capacitance information
 +	C_unit = 1f
 +	C_output = 50f
-*Stage scale information
-+	size_stage_1 = 2
-+	size_stage_2 = 3
-+	size_stage_3 = 4
 
 *Simulation sweep parameter
 .INCLUDE ./sweep_params.sp
@@ -40,11 +36,17 @@
 Xinput in In_0 vdd vss inv
 
 *Input amplifier inverters
-XIn_0 In_0 In_1 vdd vss inv size ='size_stage_1'	
+.INCLUDE ./amplifier.sp
 
-XIn_1 In_1 In_2 vdd vss inv size ='size_stage_2'
+*XIn_0 In_0 In_1 vdd vss inv size ='size_stage_1'	
 
-XIn_2 In_2 output vdd vss inv size ='size_stage_3'
+*XIn_1 In_1 In_2 vdd vss inv size ='size_stage_2'
+
+*XIn_2 In_2 In_3 vdd vss inv size ='size_stage_3'
+
+*XIn_3 In_3 In_4 vdd vss inv size ='size_stage_4'
+
+*XIn_4 In_4 output vdd vss inv size ='size_stage_5'
 
 *Put these in an external file to reduce clutter in this one.
 .INCLUDE ./output_load.sp
@@ -65,7 +67,7 @@ v0 vdd 0 DC='vdd'
 v2 in 0 PWL 0 0 200p 0 220p 1.8 1.22n 1.8 1.24n 0
 
 *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*
-*ANalysis
+*Analysis
 
 .TEMP 25.0
 .TRAN 1e-12 2e-9
